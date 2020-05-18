@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  clamav:
+    build:
+      context: .
+    volumes:
+      - ./tmp/upload:/tmp/upload
+    environment:
+      SLACK_WEBHOOK_URL:
+      CHANNEL:
+    cap_add:
+      - SYS_ADMIN
